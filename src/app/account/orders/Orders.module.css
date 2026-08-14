@@ -1,0 +1,311 @@
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+  width: 100%;
+}
+
+.accountHeader {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 24px;
+  margin-bottom: 40px;
+}
+
+.accountHeader h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.accountHeader p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.accountHeader code {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.accountLayout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 40px;
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sideLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.sideLink:hover {
+  background-color: #F1F5F9;
+  color: var(--text-primary);
+}
+
+.activeLink {
+  background-color: var(--primary-light) !important;
+  color: var(--primary-color) !important;
+}
+
+/* Main Area */
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mainContent h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+/* Empty State */
+.emptyOrders {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 64px 24px;
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.emptyIcon {
+  color: var(--text-light);
+}
+
+.emptyOrders h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.emptyOrders p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  max-width: 280px;
+}
+
+.shopBtn {
+  padding: 12px 24px;
+  background-color: var(--primary-color);
+  color: #FFFFFF;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.shopBtn:hover {
+  background-color: var(--primary-hover);
+  box-shadow: var(--shadow-md);
+}
+
+/* Orders List */
+.ordersList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.orderCard {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.orderCard:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
+}
+
+.cardHeader {
+  background: #F8FAFC;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerInfo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.orderNo {
+  font-weight: 800;
+  color: var(--text-primary);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.95rem;
+}
+
+.orderDate {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.statusPill {
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.statusPending { background: #FEF3C7; color: #D97706; }
+.statusConfirmed { background: #DBEAFE; color: #2563EB; }
+.statusPreparing { background: #F3E8FF; color: #7C3AED; }
+.statusOutForDelivery { background: #E0F2FE; color: #0284C7; }
+.statusDelivered { background: #D1FAE5; color: #059669; }
+.statusCancelled { background: #FEE2E2; color: #DC2626; }
+
+.cardBody {
+  padding: 20px 24px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+}
+
+.itemsSummary {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.itemsTitle {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.itemsListText {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.priceSummary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.priceLabel {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.priceVal {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.cardFooter {
+  padding: 16px 24px;
+  border-top: 1px dashed var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.paymentStatusRow {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.paymentStatusRow strong {
+  margin-left: 6px;
+  color: var(--text-primary);
+}
+
+.paidText {
+  color: var(--success-color) !important;
+}
+
+.viewBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--primary-light);
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 0.85rem;
+  border-radius: var(--radius-full);
+  transition: all 0.2s ease;
+}
+
+.viewBtn:hover {
+  background: var(--primary-color);
+  color: #FFFFFF;
+}
+
+.loadingWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skeletonRow {
+  height: 150px;
+  border-radius: var(--radius-lg);
+}
+
+@media (max-width: 900px) {
+  .accountLayout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cardBody {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .priceSummary {
+    align-items: flex-start;
+  }
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .headerInfo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}

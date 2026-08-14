@@ -1,0 +1,247 @@
+.layoutWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Top Announcement Bar */
+.topAnnouncement {
+  background: linear-gradient(90deg, #0F172A, #1E293B);
+  color: #F8FAFC;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.announcementContainer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.dot {
+  color: var(--primary-color);
+  opacity: 0.6;
+}
+
+.topLink {
+  color: #10B981;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.topLink:hover {
+  opacity: 0.85;
+}
+
+.mainContent {
+  flex-grow: 1;
+}
+
+/* Floating Contact Widget */
+.floatingContact {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+}
+
+.waBtn, .instaBtn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  position: relative;
+  text-decoration: none;
+}
+
+.waBtn {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+}
+
+.instaBtn {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.waBtn:hover, .instaBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.waTooltip {
+  position: absolute;
+  right: 60px;
+  background: #0F172A;
+  color: #FFFFFF;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: translateX(6px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.waBtn:hover .waTooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Footer Section */
+.footer {
+  background-color: #0F172A; /* Slate 900 */
+  color: #F8FAFC;
+  padding: 64px 24px 24px;
+  border-top: 1px solid #1E293B;
+}
+
+.footerContainer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.footerSection h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+
+.footerSection ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footerSection a {
+  color: #94A3B8;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.footerSection a:hover {
+  color: var(--primary-color);
+}
+
+.footerLogo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+}
+
+.footerDesc {
+  color: #94A3B8;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.socialRow {
+  margin-top: 16px;
+}
+
+.socialBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 8px 14px;
+  border-radius: 20px;
+  color: #E2E8F0 !important;
+  font-size: 0.85rem !important;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+}
+
+.socialBadge:hover {
+  background: rgba(225, 48, 108, 0.2) !important;
+  border-color: #E1306C !important;
+  color: #FFFFFF !important;
+}
+
+.highlightText {
+  color: #F59E0B;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.mapsLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #38BDF8 !important;
+}
+
+.contactLink {
+  color: #E2E8F0 !important;
+}
+
+.contactLink:hover {
+  color: var(--primary-color) !important;
+}
+
+.footerSection p {
+  color: #94A3B8;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.copyright {
+  max-width: var(--max-width);
+  margin: 48px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid #1E293B;
+  text-align: center;
+  color: #64748B;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 1024px) {
+  .footerContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footerContainer {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .footer {
+    padding: 48px 24px 24px;
+  }
+  .announcementContainer {
+    gap: 8px;
+    font-size: 0.8rem;
+  }
+  .dot {
+    display: none;
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "EggAdmin",
+      "email": "admin@eggstore.com",
+      "phone": "9999999999",
+      "passwordHash": "$2b$10$6sBGyg56f3jM27J7cZCBZuut5/drBxOl6I6oCwVyrCT7CI6bZSv1u",
+      "role": "ADMIN",
+      "isActive": true,
+      "createdAt": "2026-08-14T03:15:56.000Z",
+      "updatedAt": "2026-08-14T03:15:56.000Z"
+    },
+    {
+      "id": 2,
+      "name": "Ravi Kumar",
+      "email": "ravi@gmail.com",
+      "phone": "9876543210",
+      "passwordHash": "$2b$10$KEjFqh/TkD16LwZ96ZQvz.ljzBbv9aytYrWDhWMFAIiV7dAL95FSa",
+      "role": "CUSTOMER",
+      "isActive": true,
+      "createdAt": "2026-08-14T03:15:56.000Z",
+      "updatedAt": "2026-08-14T03:15:56.000Z"
+    }
+  ],
+  "addresses": [
+    {
+      "id": 1,
+      "userId": 2,
+      "fullName": "Ravi Kumar",
+      "phone": "9876543210",
+      "house": "Flat 402, Green Meadows",
+      "street": "Koramangala 8th Block",
+      "area": "Near Park",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "pincode": "560095",
+      "isDefault": true,
+      "createdAt": "2026-08-14T03:15:56.000Z",
+      "updatedAt": "2026-08-14T03:15:56.000Z"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Fresh White Eggs (Pack of 6)",
+      "slug": "white-eggs-6",
+      "description": "Daily fresh farm white eggs, packed with protein and essential nutrients.",
+      "eggType": "WHITE",
+      "packSize": 6,
+      "price": 45,
+      "imageUrl": "/images/white-eggs-6.jpg",
+      "isActive": true,
+      "createdAt": "2026-08-14T03:15:56.000Z",
+      "updatedAt": "2026-08-14T03:15:56.000Z"
+    },
+    {
+      "id": 2,
+      "name": "Fresh White Eggs (Pack of 12)",
+      "slug": "white-eggs-12",
+      "description": "Daily fresh farm white eggs, ideal size for a small family weekly supply.",
+      "eggType": "WHITE",
+      "packSize": 12,
+      "price": 90,
+      "imageUrl": "/images/white-eggs-12.jpg",
+      "isActive": true,
+      "createdAt": "2026-08-14T03:15:56.000Z",
+      "updatedAt": "2026-08-14T03:15:56.000Z"
+    },
+    {
+      "id": 3,
+      "name": "Fresh White Eggs (Pack of 30)",
+      "slug": "white-eggs-30",
+      "description": "Bulk tray of fresh farm white eggs. Best value for baking and large families.",
+      "eggType": "WHITE",
+      "packSize": 30,
+      "price": 210,
+      "imageUrl": "/images/white-eggs-30.jpg",
+      "isActive": true,
+      "createdAt": "2026-08-14T03:15:56.000Z",
+      "updatedAt": "2026-08-14T03:15:56.000Z"
+    },
+    {
+      "id": 4,
+      "name": "Farm Brown Eggs (Pack of 6)",
+      "slug": "brown-eggs-6",
+      "description": "Premium brown shell eggs, naturally laid by cage-free hens.",
+      "eggType": "BROWN",
+      "packSize": 6,
+      "price": 60,
+      "imageUrl": "/images/brown-eggs-6.jpg",
+      "isActive": true,
+      "createdAt": "2026-08-14T03:15:56.000Z",
+      "updatedAt": "2026-08-14T03:15:56.000Z"
+    },
+    {
+      "id": 5,
+      "name": "Farm Brown Eggs (Pack of 12)",
+      "slug": "brown-eggs-12",
+      "description": "Premium brown shell eggs, rich in golden yolk and delicious taste.",
+      "eggType": "BROWN",
+      "packSize": 12,
+      "price": 115,
+      "imageUrl": "/images/brown-eggs-12.jpg",
+      "isActive": true,
+      "createdAt": "2026-08-14T03:15:56.000Z",
+      "updatedAt": "2026-08-14T03:15:56.000Z"
+    },
+    {
+      "id": 6,
+      "name": "Nutritious Country Eggs (Pack of 6)",
+      "slug": "country-eggs-6",
+      "description": "Traditional free-range country eggs (Nattu Kozhi Muttai) packed with rich taste.",
+      "eggType": "COUNTRY",
+      "packSize": 6,
+      "price": 75,
+      "imageUrl": "/images/country-eggs-6.jpg",
+      "isActive": true,
+      "createdAt": "2026-08-14T03:15:56.000Z",
+      "updatedAt": "2026-08-14T03:15:56.000Z"
+    },
+    {
+      "id": 7,
+      "name": "Nutritious Country Eggs (Pack of 12)",
+      "slug": "country-eggs-12",
+      "description": "Traditional free-range country eggs, sourced directly from village farms.",
+      "eggType": "COUNTRY",
+      "packSize": 12,
+      "price": 145,
+      "imageUrl": "/images/country-eggs-12.jpg",
+      "isActive": true,
+      "createdAt": "2026-08-14T03:15:56.000Z",
+      "updatedAt": "2026-08-14T03:15:56.000Z"
+    }
+  ],
+  "inventory": [
+    {
+      "id": 1,
+      "productId": 1,
+      "quantity": 100,
+      "lowStockThreshold": 10,
+      "updatedAt": "2026-08-14T03:15:56.000Z"
+    },
+    {
+      "id": 2,
+      "productId": 2,
+      "quantity": 100,
+      "lowStockThreshold": 10,
+      "updatedAt": "2026-08-14T03:15:56.000Z"
+    },
+    {
+      "id": 3,
+      "productId": 3,
+      "quantity": 100,
+      "lowStockThreshold": 10,
+      "updatedAt": "2026-08-14T03:15:56.000Z"
+    },
+    {
+      "id": 4,
+      "productId": 4,
+      "quantity": 100,
+      "lowStockThreshold": 10,
+      "updatedAt": "2026-08-14T03:15:56.000Z"
+    },
+    {
+      "id": 5,
+      "productId": 5,
+      "quantity": 100,
+      "lowStockThreshold": 10,
+      "updatedAt": "2026-08-14T03:15:56.000Z"
+    },
+    {
+      "id": 6,
+      "productId": 6,
+      "quantity": 8,
+      "lowStockThreshold": 10,
+      "updatedAt": "2026-08-14T03:15:56.000Z"
+    },
+    {
+      "id": 7,
+      "productId": 7,
+      "quantity": 100,
+      "lowStockThreshold": 10,
+      "updatedAt": "2026-08-14T03:15:56.000Z"
+    }
+  ],
+  "carts": [
+    {
+      "id": 1,
+      "userId": 2,
+      "items": [],
+      "createdAt": "2026-08-14T03:23:15.000Z",
+      "updatedAt": "2026-08-14T03:23:15.000Z"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "items": [],
+      "createdAt": "2026-08-14T09:14:12.425Z",
+      "updatedAt": "2026-08-14T09:14:12.425Z"
+    }
+  ],
+  "orders": [],
+  "orderItems": [],
+  "payments": [],
+  "orderStatusHistory": [],
+  "reviews": [
+    {
+      "id": 1,
+      "userId": 2,
+      "userName": "Ravi Kumar",
+      "productId": 5,
+      "rating": 5,
+      "comment": "Very fresh eggs! Perfect shell thickness and beautiful orange yolks.",
+      "isApproved": true,
+      "createdAt": "2026-08-14T03:15:56.000Z",
+      "updatedAt": "2026-08-14T03:15:56.000Z"
+    }
+  ],
+  "notifications": []
+}
