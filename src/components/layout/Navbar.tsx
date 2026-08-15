@@ -69,7 +69,7 @@ export default function Navbar() {
         <div className={styles.actions}>
           {/* Notifications */}
           {user && (
-            <div className={styles.dropdownContainer}>
+            <div className={`${styles.dropdownContainer} ${styles.desktopOnlyAction}`}>
               <button 
                 className={styles.actionBtn} 
                 onClick={() => {
@@ -113,7 +113,7 @@ export default function Navbar() {
 
           {/* User Profile / Access */}
           {user ? (
-            <div className={styles.profileMenuContainer}>
+            <div className={`${styles.profileMenuContainer} ${styles.desktopOnlyAction}`}>
               <Link href={user.role === 'ADMIN' ? '/admin' : '/account/orders'} className={styles.profileLink}>
                 <div className={styles.avatar}>
                   <User size={18} />
@@ -133,7 +133,7 @@ export default function Navbar() {
               </div>
             </div>
           ) : (
-            <div className={styles.authButtons}>
+            <div className={`${styles.authButtons} ${styles.desktopOnlyAction}`}>
               <Link href="/login" className={styles.loginBtn}>Login</Link>
               <Link href="/register" className={styles.registerBtn}>Register</Link>
             </div>
@@ -164,6 +164,55 @@ export default function Navbar() {
               Admin Dashboard
             </Link>
           )}
+
+          {/* Mobile-only User Actions inside the drawer */}
+          <div className={styles.mobileOnlyActions}>
+            <hr className={styles.mobileDivider} />
+            {user ? (
+              <>
+                <div className={styles.mobileUserMeta}>
+                  <div className={styles.avatar}>
+                    <User size={18} />
+                  </div>
+                  <span className={styles.mobileUserName}>{user.name}</span>
+                </div>
+                <Link href="/account/orders" className={styles.mobileNavLink} onClick={() => setShowMobileMenu(false)}>
+                  My Orders
+                </Link>
+                <Link href="/account/profile" className={styles.mobileNavLink} onClick={() => setShowMobileMenu(false)}>
+                  Profile Settings
+                </Link>
+                {notifCount > 0 && (
+                  <div className={styles.mobileNavLink} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }} onClick={() => {
+                    markAllRead();
+                    setShowMobileMenu(false);
+                  }}>
+                    <span>Notifications</span>
+                    <span className={styles.mobileNotifBadge}>{notifCount} new</span>
+                  </div>
+                )}
+                <button 
+                  onClick={() => {
+                    logout();
+                    setShowMobileMenu(false);
+                  }} 
+                  className={styles.mobileLogoutBtn}
+                >
+                  <LogOut size={16} />
+                  <span>Logout</span>
+                </button>
+              </>
+            ) : (
+              <div className={styles.mobileAuthButtons}>
+                <Link href="/login" className={styles.mobileLoginBtn} onClick={() => setShowMobileMenu(false)}>
+                  Login
+                </Link>
+                <Link href="/register" className={styles.mobileRegisterBtn} onClick={() => setShowMobileMenu(false)}>
+                  Register
+                </Link>
+              </div>
+            )}
+          </div>
         </nav>
       )}
     </header>
