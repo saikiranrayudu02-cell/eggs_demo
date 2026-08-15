@@ -374,7 +374,7 @@ class MySQLDatabase {
     }
 
     try {
-      const writeScript = path.join(process.cwd(), 'src/lib/mysql_write.js');
+      const writeScript = path.join(/*turbopackIgnore: true*/ process.cwd(), 'src/lib/mysql_write.js');
       const child = spawn('node', [writeScript], {
         stdio: ['pipe', 'ignore', 'inherit'],
         env: { ...process.env }
