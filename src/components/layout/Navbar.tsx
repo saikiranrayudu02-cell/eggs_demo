@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useAuth } from '@/components/AuthProvider';
 import { useCart } from '@/components/CartProvider';
-import { Bell, ShoppingCart, User, LogOut, ChevronDown } from 'lucide-react';
+import { Bell, ShoppingCart, User, LogOut, ChevronDown, Menu, X } from 'lucide-react';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
@@ -12,6 +12,7 @@ export default function Navbar() {
   const { items } = useCart();
   const [notifCount, setNotifCount] = useState(0);
   const [showNotifDropdown, setShowNotifDropdown] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [notifications, setNotifications] = useState<any[]>([]);
 
   const totalCartCount = items.reduce((sum, item) => sum + item.quantity, 0);
@@ -137,8 +138,34 @@ export default function Navbar() {
               <Link href="/register" className={styles.registerBtn}>Register</Link>
             </div>
           )}
+
+          {/* Mobile Menu Toggle Button */}
+          <button 
+            className={styles.mobileMenuBtn} 
+            onClick={() => setShowMobileMenu(!showMobileMenu)}
+            aria-label="Toggle menu"
+          >
+            {showMobileMenu ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Dropdown Navigation Drawer */}
+      {showMobileMenu && (
+        <nav className={styles.mobileNav}>
+          <Link href="/" className={styles.mobileNavLink} onClick={() => setShowMobileMenu(false)}>
+            Home
+          </Link>
+          <Link href="/products" className={styles.mobileNavLink} onClick={() => setShowMobileMenu(false)}>
+            Shop Eggs
+          </Link>
+          {user && user.role === 'ADMIN' && (
+            <Link href="/admin" className={`${styles.mobileNavLink} ${styles.mobileAdminLink}`} onClick={() => setShowMobileMenu(false)}>
+              Admin Dashboard
+            </Link>
+          )}
+        </nav>
+      )}
     </header>
   );
 }

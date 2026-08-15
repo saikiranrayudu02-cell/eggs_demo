@@ -709,10 +709,12 @@
   .ctaButtons {
     flex-direction: column;
     width: 100%;
+    gap: 12px;
   }
   .primaryCta, .secondaryCta {
     width: 100%;
     text-align: center;
+    justify-content: center;
   }
   .benefitsGrid, .productGrid, .loaderGrid, .stepsGrid {
     grid-template-columns: 1fr;
@@ -722,5 +724,36 @@
   }
   .ctaBox h2 {
     font-size: 1.85rem;
+  }
+  
+  /* Mobile hero illustration adjustments */
+  .orbitalRing1 {
+    width: 220px;
+    height: 220px;
+  }
+  .orbitalRing2 {
+    width: 300px;
+    height: 300px;
+  }
+  .glassOrb {
+    width: 190px;
+    height: 190px;
+  }
+  .heroEgg {
+    font-size: 8rem;
+  }
+  .eggShadow {
+    width: 80px;
+    margin-top: -5px;
+  }
+  .floatingCard {
+    display: none !important; /* Prevents overflow and breaks on small screen widths */
+  }
+  .heroSocialProof {
+    padding: 12px 20px;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
   }
 }
