@@ -6,11 +6,20 @@
 
 /* Top Announcement Bar */
 .topAnnouncement {
-  background: linear-gradient(90deg, #0F172A, #1E293B);
+  background: linear-gradient(90deg, #0F172A, #1E293B, #0F172A);
+  background-size: 200% auto;
+  animation: shimmer 8s linear infinite;
   color: #F8FAFC;
-  padding: 8px 16px;
-  font-size: 0.85rem;
+  padding: 10px 16px;
+  font-size: 0.88rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  letter-spacing: 0.01em;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .announcementContainer {
@@ -26,180 +35,260 @@
 
 .dot {
   color: var(--primary-color);
-  opacity: 0.6;
+  opacity: 0.8;
+  font-size: 0.8rem;
 }
 
 .topLink {
-  color: #10B981;
+  color: var(--primary-color);
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  font-weight: 600;
+  gap: 6px;
+  font-weight: 700;
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  transition: all 0.25s var(--ease-spring);
+  position: relative;
+}
+
+.topLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--primary-color);
+  transition: width 0.3s var(--ease-spring);
 }
 
 .topLink:hover {
-  opacity: 0.85;
+  color: var(--primary-hover);
+  transform: translateX(2px);
+}
+
+.topLink:hover::after {
+  width: 100%;
 }
 
 .mainContent {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Floating Contact Widget */
 .floatingContact {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
+  bottom: 28px;
+  right: 28px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
   z-index: 999;
 }
 
 .waBtn, .instaBtn {
-  width: 50px;
-  height: 50px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #FFFFFF;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: all 0.35s var(--ease-spring);
   position: relative;
   text-decoration: none;
+  font-size: 1.5rem;
 }
 
 .waBtn {
   background: linear-gradient(135deg, #25D366, #128C7E);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .instaBtn {
   background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .waBtn:hover, .instaBtn:hover {
+  transform: scale(1.15) rotate(-5deg);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.waBtn::before, .instaBtn::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.waBtn:hover::before {
+  border-color: rgba(37, 211, 102, 0.4);
   transform: scale(1.1);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.instaBtn:hover::before {
+  border-color: rgba(225, 48, 108, 0.4);
+  transform: scale(1.1);
 }
 
 .waTooltip {
   position: absolute;
-  right: 60px;
-  background: #0F172A;
+  right: 68px;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: #FFFFFF;
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-size: 0.75rem;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
   font-weight: 600;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  transform: translateX(6px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s var(--ease-spring);
+  transform: translateX(10px) scale(0.95);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .waBtn:hover .waTooltip {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(0) scale(1);
 }
 
 /* Footer Section */
 .footer {
-  background-color: #0F172A; /* Slate 900 */
+  background: linear-gradient(180deg, #0F172A 0%, #020617 100%);
   color: #F8FAFC;
-  padding: 64px 24px 24px;
+  padding: 80px 24px 32px;
   border-top: 1px solid #1E293B;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.3), transparent);
 }
 
 .footerContainer {
   max-width: var(--max-width);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+  gap: 48px;
+  position: relative;
+  z-index: 1;
 }
 
 .footerSection h4 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 20px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 24px;
   color: #FFFFFF;
+  font-family: var(--font-family-display);
+  letter-spacing: 0.02em;
 }
 
 .footerSection ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .footerSection a {
   color: #94A3B8;
   font-size: 0.95rem;
-  transition: color 0.2s ease;
+  transition: all 0.2s var(--ease-spring);
   text-decoration: none;
+  display: inline-block;
 }
 
 .footerSection a:hover {
   color: var(--primary-color);
+  transform: translateX(4px);
 }
 
 .footerLogo {
-  font-size: 1.4rem;
-  font-weight: 800;
+  font-size: 1.6rem;
+  font-weight: 850;
   color: #FFFFFF;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  font-family: var(--font-family-display);
+  letter-spacing: -0.02em;
+  display: inline-block;
+  background: linear-gradient(135deg, #FFFFFF, #94A3B8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .footerDesc {
   color: #94A3B8;
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.7;
+  max-width: 320px;
 }
 
 .socialRow {
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 .socialBadge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.08);
-  padding: 8px 14px;
-  border-radius: 20px;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 18px;
+  border-radius: var(--radius-full);
   color: #E2E8F0 !important;
-  font-size: 0.85rem !important;
+  font-size: 0.9rem !important;
   font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s var(--ease-spring);
 }
 
 .socialBadge:hover {
-  background: rgba(225, 48, 108, 0.2) !important;
-  border-color: #E1306C !important;
+  background: rgba(225, 48, 108, 0.15) !important;
+  border-color: rgba(225, 48, 108, 0.5) !important;
   color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(225, 48, 108, 0.2);
 }
 
 .highlightText {
-  color: #F59E0B;
-  font-weight: 600;
-  font-size: 0.9rem;
+  color: var(--secondary-color);
+  font-weight: 700;
+  font-size: 0.95rem;
 }
 
 .mapsLink {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   color: #38BDF8 !important;
+  font-weight: 600;
+}
+
+.mapsLink:hover {
+  transform: translateX(4px) !important;
+  color: #7DD3FC !important;
 }
 
 .contactLink {
   color: #E2E8F0 !important;
+  font-weight: 500;
 }
 
 .contactLink:hover {
@@ -209,39 +298,47 @@
 .footerSection p {
   color: #94A3B8;
   font-size: 0.95rem;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  line-height: 1.6;
 }
 
 .copyright {
   max-width: var(--max-width);
-  margin: 48px auto 0;
+  margin: 64px auto 0;
   padding-top: 24px;
-  border-top: 1px solid #1E293B;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   text-align: center;
   color: #64748B;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 1024px) {
   .footerContainer {
     grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
+    gap: 48px;
   }
 }
 
 @media (max-width: 640px) {
   .footerContainer {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 40px;
   }
   .footer {
-    padding: 48px 24px 24px;
+    padding: 64px 24px 24px;
   }
   .announcementContainer {
-    gap: 8px;
-    font-size: 0.8rem;
+    gap: 10px;
+    font-size: 0.85rem;
   }
   .dot {
     display: none;
+  }
+  .floatingContact {
+    bottom: 20px;
+    right: 20px;
+    transform: scale(0.9);
   }
 }

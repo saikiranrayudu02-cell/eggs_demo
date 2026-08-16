@@ -7,16 +7,23 @@
 
 /* Banner Section */
 .banner {
-  background: linear-gradient(135deg, #059669 0%, #064e3b 100%);
+  background: linear-gradient(135deg, #D97706 0%, #064e3b 50%, #B45309 100%);
+  background-size: 200% auto;
+  animation: bannerGradient 10s ease infinite;
   color: #FFFFFF;
-  padding: 64px 32px;
-  border-radius: var(--radius-lg);
+  padding: 72px 32px;
+  border-radius: var(--radius-2xl);
   margin-bottom: 48px;
   text-align: center;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-xl);
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@keyframes bannerGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 .banner::before {
@@ -24,9 +31,20 @@
   position: absolute;
   top: -50%;
   right: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 70%);
+  pointer-events: none;
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  bottom: -40%;
+  left: -15%;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0) 70%);
   pointer-events: none;
 }
 
@@ -35,14 +53,19 @@
   font-size: 2.75rem;
   font-weight: 850;
   margin-bottom: 12px;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.035em;
+  position: relative;
+  z-index: 1;
 }
 
 .banner p {
-  font-size: 1.1rem;
+  font-size: 1.08rem;
   opacity: 0.9;
   max-width: 500px;
   margin: 0 auto;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
 }
 
 /* Controls Bar */
@@ -57,7 +80,7 @@
 .searchBox {
   position: relative;
   flex: 1;
-  max-width: 400px;
+  max-width: 420px;
 }
 
 .searchIcon {
@@ -67,20 +90,20 @@
   transform: translateY(-50%);
   color: var(--text-light);
   pointer-events: none;
-  transition: color 0.2s ease;
+  transition: color 0.25s ease;
 }
 
 .searchInput {
   width: 100%;
   padding: 14px 18px 14px 48px;
-  border: 1px solid var(--border-color);
+  border: 1.5px solid var(--border-color-hover);
   border-radius: var(--radius-full);
   outline: none;
   background: #FFFFFF;
   color: var(--text-primary);
   font-weight: 500;
   box-shadow: var(--shadow-sm);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s var(--ease-spring);
 }
 
 .searchInput::placeholder {
@@ -89,7 +112,7 @@
 
 .searchInput:focus {
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.1), var(--shadow-md);
 }
 
 .searchInput:focus + .searchIcon {
@@ -106,36 +129,36 @@
   font-family: var(--font-family-display);
   font-weight: 700;
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 }
 
 .sortSelect {
   padding: 12px 20px;
   border-radius: var(--radius-full);
-  border: 1px solid var(--border-color);
+  border: 1.5px solid var(--border-color-hover);
   background: #FFFFFF;
   color: var(--text-primary);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   outline: none;
   box-shadow: var(--shadow-sm);
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s var(--ease-spring);
 }
 
 .sortSelect:hover {
-  border-color: var(--border-color-hover);
+  border-color: var(--text-light);
 }
 
 .sortSelect:focus {
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.1);
 }
 
 /* Tabs Row */
 .tabsRow {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   margin-bottom: 48px;
   overflow-x: auto;
   padding-bottom: 12px;
@@ -147,42 +170,44 @@
 }
 
 .tabBtn {
-  padding: 12px 26px;
+  padding: 11px 24px;
   background: #FFFFFF;
-  border: 1px solid var(--border-color);
+  border: 1.5px solid var(--border-color-hover);
   border-radius: var(--radius-full);
   font-family: var(--font-family-display);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--text-secondary);
   white-space: nowrap;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s var(--ease-spring);
   box-shadow: var(--shadow-sm);
 }
 
 .tabBtn:hover {
-  background: rgba(15, 23, 42, 0.02);
-  color: var(--text-primary);
-  border-color: var(--border-color-hover);
+  background: rgba(245, 158, 11, 0.04);
+  color: var(--primary-color);
+  border-color: rgba(245, 158, 11, 0.2);
+  transform: translateY(-1px);
 }
 
 .activeTab {
   background: linear-gradient(135deg, var(--primary-color), var(--primary-hover)) !important;
   color: #FFFFFF !important;
   border-color: transparent !important;
-  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25) !important;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3) !important;
+  transform: translateY(-1px);
 }
 
 /* Catalog Grid */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
+  gap: 24px;
 }
 
 .skeletonCard {
   height: 380px;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
 }
 
 /* Empty State */
@@ -193,8 +218,8 @@
   justify-content: center;
   padding: 96px 24px;
   background: #FFFFFF;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(15, 23, 42, 0.04);
   text-align: center;
   gap: 20px;
   box-shadow: var(--shadow-md);
@@ -221,7 +246,7 @@
   color: var(--text-secondary);
   max-width: 340px;
   font-size: 0.95rem;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .resetBtn {
@@ -232,13 +257,14 @@
   font-family: var(--font-family-display);
   font-weight: 700;
   border-radius: var(--radius-full);
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+  transition: all 0.25s var(--ease-spring);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .resetBtn:hover {
-  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.35);
-  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.35);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 1200px) {
@@ -250,7 +276,7 @@
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    gap: 20px;
   }
   .controlsBar {
     flex-direction: column;
@@ -276,6 +302,7 @@
     font-size: 1.85rem;
   }
   .banner {
-    padding: 36px 20px;
+    padding: 40px 20px;
+    border-radius: var(--radius-xl);
   }
 }

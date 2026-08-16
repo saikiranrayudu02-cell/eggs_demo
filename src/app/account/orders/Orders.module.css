@@ -185,7 +185,7 @@
 .statusConfirmed { background: #DBEAFE; color: #2563EB; }
 .statusPreparing { background: #F3E8FF; color: #7C3AED; }
 .statusOutForDelivery { background: #E0F2FE; color: #0284C7; }
-.statusDelivered { background: #D1FAE5; color: #059669; }
+.statusDelivered { background: #D1FAE5; color: #D97706; }
 .statusCancelled { background: #FEE2E2; color: #DC2626; }
 
 .cardBody {

@@ -11,35 +11,40 @@
   font-weight: 850;
   color: var(--text-primary);
   margin-bottom: 40px;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.035em;
 }
 
 .mainGrid {
   display: grid;
   grid-template-columns: 1.25fr 0.75fr;
-  gap: 40px;
+  gap: 36px;
   align-items: start;
 }
 
 .checkoutDetails {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 24px;
 }
 
 .sectionCard {
   background: #FFFFFF;
   border: 1px solid rgba(15, 23, 42, 0.04);
-  border-radius: var(--radius-lg);
-  padding: 36px;
+  border-radius: var(--radius-xl);
+  padding: 32px;
   box-shadow: var(--shadow-md);
+  transition: box-shadow 0.3s ease;
+}
+
+.sectionCard:hover {
+  box-shadow: var(--shadow-lg);
 }
 
 .sectionHeader {
   display: flex;
   align-items: center;
   gap: 10px;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
   padding-bottom: 16px;
   margin-bottom: 24px;
 }
@@ -50,17 +55,17 @@
 
 .sectionHeader h2 {
   font-family: var(--font-family-display);
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 800;
   color: var(--text-primary);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 /* Address List */
 .addressList {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   margin-bottom: 24px;
 }
 
@@ -69,23 +74,24 @@
   align-items: flex-start;
   gap: 14px;
   padding: 20px;
-  border: 1px solid rgba(15, 23, 42, 0.05);
-  border-radius: var(--radius-md);
+  border: 1.5px solid rgba(15, 23, 42, 0.06);
+  border-radius: var(--radius-lg);
   cursor: pointer;
-  background: #F8FAFC;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  background: rgba(248, 250, 252, 0.8);
+  transition: all 0.3s var(--ease-spring);
 }
 
 .addressLabel:hover {
   background: #FFFFFF;
-  border-color: rgba(15, 23, 42, 0.15);
+  border-color: rgba(245, 158, 11, 0.2);
   box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
 }
 
 .selectedAddress {
   background: var(--primary-light) !important;
   border-color: var(--primary-color) !important;
-  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.08);
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.1);
 }
 
 .radioInput {
@@ -102,30 +108,33 @@
 .fullName {
   font-family: var(--font-family-display);
   font-weight: 750;
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   display: flex;
   align-items: center;
   gap: 8px;
   color: var(--text-primary);
+  letter-spacing: -0.01em;
 }
 
 .defaultBadge {
-  background: var(--primary-color);
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
   color: #FFFFFF;
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 700;
   padding: 2px 8px;
   border-radius: var(--radius-sm);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
 .phoneText {
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   font-weight: 600;
   color: var(--text-secondary);
 }
 
 .houseText, .cityText {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--text-secondary);
   line-height: 1.45;
 }
@@ -142,7 +151,7 @@
   font-weight: 700;
   color: var(--primary-color);
   font-size: 0.95rem;
-  transition: color 0.15s ease;
+  transition: all 0.2s ease;
 }
 
 .addAddressToggleBtn:hover {
@@ -153,44 +162,44 @@
 .addressForm {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
 }
 
 .formRow {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 18px;
 }
 
 .formGroup {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .formGroup label {
   font-family: var(--font-family-display);
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   font-weight: 700;
   color: var(--text-secondary);
 }
 
 .formGroup input {
-  padding: 12px 16px;
-  border: 1px solid var(--border-color);
+  padding: 13px 16px;
+  border: 1.5px solid var(--border-color-hover);
   border-radius: var(--radius-md);
   outline: none;
-  background: #F8FAFC;
+  background: rgba(248, 250, 252, 0.8);
   color: var(--text-primary);
   font-weight: 500;
   font-size: 0.95rem;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s var(--ease-spring);
 }
 
 .formGroup input:focus {
   border-color: var(--primary-color);
   background: #FFFFFF;
-  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.08);
 }
 
 .formButtons {
@@ -203,17 +212,18 @@
 .cancelBtn {
   padding: 12px 24px;
   border-radius: var(--radius-full);
-  border: 1px solid var(--border-color);
+  border: 1.5px solid var(--border-color-hover);
   font-family: var(--font-family-display);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--text-secondary);
-  transition: all 0.15s ease;
+  transition: all 0.2s ease;
 }
 
 .cancelBtn:hover {
   background: #F1F5F9;
   color: var(--text-primary);
+  border-color: var(--text-light);
 }
 
 .saveBtn {
@@ -223,22 +233,22 @@
   color: #FFFFFF;
   font-family: var(--font-family-display);
   font-weight: 700;
-  font-size: 0.9rem;
-  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.15);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.88rem;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.2);
+  transition: all 0.3s var(--ease-spring);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .saveBtn:hover {
-  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
-  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.35);
+  transform: translateY(-2px);
 }
 
 /* Payment Method */
 .paymentList {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .paymentLabel {
@@ -246,23 +256,24 @@
   align-items: flex-start;
   gap: 14px;
   padding: 20px;
-  border: 1px solid rgba(15, 23, 42, 0.05);
-  border-radius: var(--radius-md);
+  border: 1.5px solid rgba(15, 23, 42, 0.06);
+  border-radius: var(--radius-lg);
   cursor: pointer;
-  background: #F8FAFC;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  background: rgba(248, 250, 252, 0.8);
+  transition: all 0.3s var(--ease-spring);
 }
 
 .paymentLabel:hover {
   background: #FFFFFF;
-  border-color: rgba(15, 23, 42, 0.15);
+  border-color: rgba(245, 158, 11, 0.2);
   box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
 }
 
 .selectedPayment {
   background: var(--primary-light) !important;
   border-color: var(--primary-color) !important;
-  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.08);
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.1);
 }
 
 .paymentInfo {
@@ -274,12 +285,13 @@
 .paymentTitle {
   font-family: var(--font-family-display);
   font-weight: 750;
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   color: var(--text-primary);
+  letter-spacing: -0.01em;
 }
 
 .paymentDesc {
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   color: var(--text-secondary);
 }
 
@@ -292,22 +304,22 @@
 .summaryCard {
   background: #FFFFFF;
   border: 1px solid rgba(15, 23, 42, 0.04);
-  border-radius: var(--radius-lg);
-  padding: 36px;
+  border-radius: var(--radius-xl);
+  padding: 32px;
   box-shadow: var(--shadow-lg);
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 22px;
 }
 
 .summaryCard h3 {
   font-family: var(--font-family-display);
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 800;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
   padding-bottom: 16px;
   color: var(--text-primary);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 .summaryItems {
@@ -315,7 +327,7 @@
   flex-direction: column;
   max-height: 200px;
   overflow-y: auto;
-  gap: 14px;
+  gap: 12px;
   padding-right: 6px;
 }
 
@@ -323,7 +335,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 }
 
 .summaryItemName {
@@ -338,7 +350,7 @@
 }
 
 .summaryItemQty {
-  font-size: 0.75rem;
+  font-size: 0.73rem;
   color: var(--text-secondary);
   font-weight: 500;
 }
@@ -358,18 +370,19 @@
 .summaryRow {
   display: flex;
   justify-content: space-between;
-  font-size: 0.95rem;
+  font-size: 0.93rem;
   color: var(--text-secondary);
   font-weight: 600;
 }
 
 .finalRow {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   color: var(--text-primary);
   font-family: var(--font-family-display);
   font-weight: 850;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid rgba(15, 23, 42, 0.06);
   padding-top: 16px;
+  letter-spacing: -0.02em;
 }
 
 .secureBadge {
@@ -378,13 +391,13 @@
   justify-content: center;
   gap: 8px;
   color: var(--success-color);
-  background: var(--success-bg);
-  font-size: 0.8rem;
+  background: linear-gradient(135deg, rgba(254, 243, 199, 0.8), rgba(253, 230, 138, 0.3));
+  font-size: 0.78rem;
   font-weight: 700;
   padding: 8px 16px;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   align-self: center;
-  border: 1px solid rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.1);
 }
 
 .placeOrderBtn {
@@ -400,14 +413,14 @@
   font-weight: 700;
   font-size: 0.95rem;
   border-radius: var(--radius-full);
-  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.25);
+  transition: all 0.3s var(--ease-spring);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .placeOrderBtn:hover:not(:disabled) {
-  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
-  transform: translateY(-1px);
+  box-shadow: 0 8px 28px rgba(245, 158, 11, 0.4);
+  transform: translateY(-2px) scale(1.01);
 }
 
 .placeOrderBtn:disabled {
@@ -433,8 +446,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(15, 23, 42, 0.4);
-  backdrop-filter: blur(8px);
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   z-index: 2000;
   display: flex;
   align-items: center;
@@ -445,20 +459,20 @@
   width: 100%;
   max-width: 440px;
   background: #FFFFFF;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-xl);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-2xl);
   overflow: hidden;
   border: 1px solid rgba(15, 23, 42, 0.06);
-  animation: modalScale 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation: modalScale 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
 @keyframes modalScale {
-  from { opacity: 0; transform: scale(0.9); }
+  from { opacity: 0; transform: scale(0.88); }
   to { opacity: 1; transform: scale(1); }
 }
 
 .modalHeader {
-  background: #0F172A;
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
   color: #FFFFFF;
   padding: 18px 24px;
   display: flex;
@@ -476,35 +490,37 @@
 .modalMode {
   background: var(--warning-color);
   color: #0F172A;
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 800;
   padding: 3px 8px;
   border-radius: 4px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 .modalBody {
-  padding: 32px;
+  padding: 28px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
 }
 
 .modalBody h3 {
   font-family: var(--font-family-display);
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 800;
   color: var(--text-primary);
   letter-spacing: -0.02em;
 }
 
 .transactionMeta {
-  background: #F8FAFC;
+  background: rgba(248, 250, 252, 0.8);
   padding: 16px;
   border-radius: var(--radius-md);
-  font-size: 0.85rem;
-  line-height: 1.5;
+  font-size: 0.84rem;
+  line-height: 1.55;
   color: var(--text-secondary);
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(15, 23, 42, 0.04);
   font-weight: 500;
 }
 
@@ -516,7 +532,7 @@
 
 .mockCardForm label {
   font-family: var(--font-family-display);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--text-secondary);
 }
@@ -524,7 +540,7 @@
 .simInput {
   width: 100%;
   padding: 12px 14px;
-  border: 1px solid var(--border-color);
+  border: 1.5px solid var(--border-color-hover);
   border-radius: var(--radius-md);
   background: #F1F5F9;
   color: var(--text-light);
@@ -562,52 +578,52 @@
 .simulationControls {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 14px;
   margin-top: 12px;
 }
 
 .simSuccessBtn {
   padding: 14px;
   border-radius: var(--radius-full);
-  background: var(--success-color);
+  background: linear-gradient(135deg, var(--success-color), var(--primary-hover));
   color: #FFFFFF;
   font-family: var(--font-family-display);
   font-weight: 700;
-  font-size: 0.9rem;
-  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.88rem;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+  transition: all 0.25s var(--ease-spring);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .simSuccessBtn:hover {
-  background: var(--primary-hover);
-  box-shadow: 0 6px 14px rgba(16, 185, 129, 0.35);
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, var(--primary-hover), var(--primary-deep, #B45309));
+  box-shadow: 0 6px 18px rgba(245, 158, 11, 0.35);
+  transform: translateY(-2px);
 }
 
 .simFailureBtn {
   padding: 14px;
   border-radius: var(--radius-full);
-  background: var(--error-color);
+  background: linear-gradient(135deg, var(--error-color), #DC2626);
   color: #FFFFFF;
   font-family: var(--font-family-display);
   font-weight: 700;
-  font-size: 0.9rem;
-  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.2);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.88rem;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+  transition: all 0.25s var(--ease-spring);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .simFailureBtn:hover {
-  background: #DC2626;
-  box-shadow: 0 6px 14px rgba(239, 68, 68, 0.35);
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, #DC2626, #B91C1C);
+  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.35);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 900px) {
   .mainGrid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
   }
   .orderSummary {
     position: static;
@@ -621,6 +637,7 @@
   }
   .sectionCard {
     padding: 24px;
+    border-radius: var(--radius-lg);
   }
   .summaryCard {
     padding: 24px;

@@ -8,8 +8,8 @@
       "passwordHash": "$2b$10$6sBGyg56f3jM27J7cZCBZuut5/drBxOl6I6oCwVyrCT7CI6bZSv1u",
       "role": "ADMIN",
       "isActive": true,
-      "createdAt": "2026-08-13T16:15:56.000Z",
-      "updatedAt": "2026-08-13T16:15:56.000Z"
+      "createdAt": "2026-08-10T16:45:56.000Z",
+      "updatedAt": "2026-08-10T16:45:56.000Z"
     },
     {
       "id": 2,
@@ -19,8 +19,30 @@
       "passwordHash": "$2b$10$KEjFqh/TkD16LwZ96ZQvz.ljzBbv9aytYrWDhWMFAIiV7dAL95FSa",
       "role": "CUSTOMER",
       "isActive": true,
-      "createdAt": "2026-08-13T16:15:56.000Z",
-      "updatedAt": "2026-08-13T16:15:56.000Z"
+      "createdAt": "2026-08-10T16:45:56.000Z",
+      "updatedAt": "2026-08-10T16:45:56.000Z"
+    },
+    {
+      "id": 3,
+      "name": "Rayudu Saikiran",
+      "email": "saikiranrayudu02@gmail.com",
+      "phone": "07032276448",
+      "passwordHash": "$2b$10$oxm7UiGXBMmhiWWAubt2R.1J1C.uZfG73oUChcrPMts3o6uw.N9xy",
+      "role": "CUSTOMER",
+      "isActive": true,
+      "createdAt": "2026-08-13T08:37:51.000Z",
+      "updatedAt": "2026-08-13T08:37:51.000Z"
+    },
+    {
+      "id": 4,
+      "name": "vyshu",
+      "email": "vilapakurti@gmail.com",
+      "phone": "9963811681",
+      "passwordHash": "$2b$10$yHdRXeVEhKvwzHhjmIpZeOvzNmTD7Q7b1eeD8EBE8o5h0I.jYNCvu",
+      "role": "CUSTOMER",
+      "isActive": true,
+      "createdAt": "2026-08-13T09:01:30.000Z",
+      "updatedAt": "2026-08-13T09:01:30.000Z"
     }
   ],
   "addresses": [
@@ -36,8 +58,23 @@
       "state": "Karnataka",
       "pincode": "560095",
       "isDefault": true,
-      "createdAt": "2026-08-13T16:15:56.000Z",
-      "updatedAt": "2026-08-13T16:15:56.000Z"
+      "createdAt": "2026-08-10T16:45:56.000Z",
+      "updatedAt": "2026-08-10T16:45:56.000Z"
+    },
+    {
+      "id": 2,
+      "userId": 3,
+      "fullName": "Rayudu Saikiran",
+      "phone": "07032276448",
+      "house": "8-71",
+      "street": "Gokhale street",
+      "area": "amp",
+      "city": "Amalapuram",
+      "state": "Andhra Pradesh",
+      "pincode": "533201",
+      "isDefault": true,
+      "createdAt": "2026-08-13T08:40:18.000Z",
+      "updatedAt": "2026-08-13T08:40:18.000Z"
     }
   ],
   "products": [
@@ -51,8 +88,8 @@
       "price": 45,
       "imageUrl": "/images/white-eggs-6.jpg",
       "isActive": true,
-      "createdAt": "2026-08-13T16:15:56.000Z",
-      "updatedAt": "2026-08-13T16:15:56.000Z"
+      "createdAt": "2026-08-10T16:45:56.000Z",
+      "updatedAt": "2026-08-10T16:45:56.000Z"
     },
     {
       "id": 2,
@@ -64,8 +101,8 @@
       "price": 90,
       "imageUrl": "/images/white-eggs-12.jpg",
       "isActive": true,
-      "createdAt": "2026-08-13T16:15:56.000Z",
-      "updatedAt": "2026-08-13T16:15:56.000Z"
+      "createdAt": "2026-08-10T16:45:56.000Z",
+      "updatedAt": "2026-08-10T16:45:56.000Z"
     },
     {
       "id": 3,
@@ -77,8 +114,8 @@
       "price": 210,
       "imageUrl": "/images/white-eggs-30.jpg",
       "isActive": true,
-      "createdAt": "2026-08-13T16:15:56.000Z",
-      "updatedAt": "2026-08-13T16:15:56.000Z"
+      "createdAt": "2026-08-10T16:45:56.000Z",
+      "updatedAt": "2026-08-10T16:45:56.000Z"
     },
     {
       "id": 4,
@@ -90,8 +127,8 @@
       "price": 60,
       "imageUrl": "/images/brown-eggs-6.jpg",
       "isActive": true,
-      "createdAt": "2026-08-13T16:15:56.000Z",
-      "updatedAt": "2026-08-13T16:15:56.000Z"
+      "createdAt": "2026-08-10T16:45:56.000Z",
+      "updatedAt": "2026-08-10T16:45:56.000Z"
     },
     {
       "id": 5,
@@ -103,8 +140,8 @@
       "price": 115,
       "imageUrl": "/images/brown-eggs-12.jpg",
       "isActive": true,
-      "createdAt": "2026-08-13T16:15:56.000Z",
-      "updatedAt": "2026-08-13T16:15:56.000Z"
+      "createdAt": "2026-08-10T16:45:56.000Z",
+      "updatedAt": "2026-08-10T16:45:56.000Z"
     },
     {
       "id": 6,
@@ -116,8 +153,8 @@
       "price": 75,
       "imageUrl": "/images/country-eggs-6.jpg",
       "isActive": true,
-      "createdAt": "2026-08-13T16:15:56.000Z",
-      "updatedAt": "2026-08-13T16:15:56.000Z"
+      "createdAt": "2026-08-10T16:45:56.000Z",
+      "updatedAt": "2026-08-10T16:45:56.000Z"
     },
     {
       "id": 7,
@@ -129,8 +166,8 @@
       "price": 145,
       "imageUrl": "/images/country-eggs-12.jpg",
       "isActive": true,
-      "createdAt": "2026-08-13T16:15:56.000Z",
-      "updatedAt": "2026-08-13T16:15:56.000Z"
+      "createdAt": "2026-08-10T16:45:56.000Z",
+      "updatedAt": "2026-08-10T16:45:56.000Z"
     }
   ],
   "inventory": [
@@ -139,49 +176,49 @@
       "productId": 1,
       "quantity": 100,
       "lowStockThreshold": 10,
-      "updatedAt": "2026-08-13T16:15:56.000Z"
+      "updatedAt": "2026-08-10T16:45:56.000Z"
     },
     {
       "id": 2,
       "productId": 2,
       "quantity": 100,
       "lowStockThreshold": 10,
-      "updatedAt": "2026-08-13T16:15:56.000Z"
+      "updatedAt": "2026-08-10T16:45:56.000Z"
     },
     {
       "id": 3,
       "productId": 3,
       "quantity": 100,
       "lowStockThreshold": 10,
-      "updatedAt": "2026-08-13T16:15:56.000Z"
+      "updatedAt": "2026-08-10T16:45:56.000Z"
     },
     {
       "id": 4,
       "productId": 4,
       "quantity": 100,
       "lowStockThreshold": 10,
-      "updatedAt": "2026-08-13T16:15:56.000Z"
+      "updatedAt": "2026-08-10T16:45:56.000Z"
     },
     {
       "id": 5,
       "productId": 5,
       "quantity": 100,
       "lowStockThreshold": 10,
-      "updatedAt": "2026-08-13T16:15:56.000Z"
+      "updatedAt": "2026-08-10T16:45:56.000Z"
     },
     {
       "id": 6,
       "productId": 6,
       "quantity": 8,
       "lowStockThreshold": 10,
-      "updatedAt": "2026-08-13T16:15:56.000Z"
+      "updatedAt": "2026-08-10T16:45:56.000Z"
     },
     {
       "id": 7,
       "productId": 7,
-      "quantity": 89,
+      "quantity": 88,
       "lowStockThreshold": 10,
-      "updatedAt": "2026-08-14T15:16:22.664Z"
+      "updatedAt": "2026-08-13T08:40:30.000Z"
     }
   ],
   "carts": [
@@ -189,15 +226,38 @@
       "id": 1,
       "userId": 2,
       "items": [],
-      "createdAt": "2026-08-13T16:23:15.000Z",
-      "updatedAt": "2026-08-14T15:16:22.664Z"
+      "createdAt": "2026-08-10T16:53:15.000Z",
+      "updatedAt": "2026-08-11T15:46:22.000Z"
     },
     {
       "id": 2,
       "userId": 1,
       "items": [],
-      "createdAt": "2026-08-13T22:14:12.000Z",
-      "updatedAt": "2026-08-13T22:14:12.000Z"
+      "createdAt": "2026-08-10T22:44:12.000Z",
+      "updatedAt": "2026-08-10T22:44:12.000Z"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "items": [],
+      "createdAt": "2026-08-13T08:37:59.000Z",
+      "updatedAt": "2026-08-13T08:40:30.000Z"
+    },
+    {
+      "id": 4,
+      "userId": 4,
+      "items": [
+        {
+          "id": 1,
+          "cartId": 4,
+          "productId": 6,
+          "quantity": 1,
+          "createdAt": "2026-08-13T09:02:55.000Z",
+          "updatedAt": "2026-08-13T09:02:55.000Z"
+        }
+      ],
+      "createdAt": "2026-08-13T09:01:39.000Z",
+      "updatedAt": "2026-08-13T09:02:55.000Z"
     }
   ],
   "orders": [
@@ -212,8 +272,8 @@
       "total": 175,
       "paymentStatus": "COD",
       "orderStatus": "CONFIRMED",
-      "createdAt": "2026-08-14T08:43:24.000Z",
-      "updatedAt": "2026-08-14T15:18:05.481Z"
+      "createdAt": "2026-08-11T09:13:24.000Z",
+      "updatedAt": "2026-08-11T15:48:05.000Z"
     },
     {
       "id": 2,
@@ -226,8 +286,22 @@
       "total": 1450,
       "paymentStatus": "PAID",
       "orderStatus": "CONFIRMED",
-      "createdAt": "2026-08-14T15:16:22.664Z",
-      "updatedAt": "2026-08-14T15:16:32.782Z"
+      "createdAt": "2026-08-11T15:46:22.000Z",
+      "updatedAt": "2026-08-11T15:46:32.000Z"
+    },
+    {
+      "id": 3,
+      "orderNumber": "ORD-20260816-8171",
+      "userId": 3,
+      "addressId": 2,
+      "subtotal": 145,
+      "deliveryFee": 30,
+      "discount": 0,
+      "total": 175,
+      "paymentStatus": "PAID",
+      "orderStatus": "OUT_FOR_DELIVERY",
+      "createdAt": "2026-08-13T08:40:30.000Z",
+      "updatedAt": "2026-08-13T08:46:33.000Z"
     }
   ],
   "orderItems": [
@@ -239,7 +313,7 @@
       "quantity": 1,
       "unitPrice": 145,
       "totalPrice": 145,
-      "createdAt": "2026-08-14T08:43:24.000Z"
+      "createdAt": "2026-08-11T09:13:24.000Z"
     },
     {
       "id": 2,
@@ -249,7 +323,17 @@
       "quantity": 10,
       "unitPrice": 145,
       "totalPrice": 1450,
-      "createdAt": "2026-08-14T15:16:22.664Z"
+      "createdAt": "2026-08-11T15:46:22.000Z"
+    },
+    {
+      "id": 3,
+      "orderId": 3,
+      "productId": 7,
+      "productName": "Nutritious Country Eggs (Pack of 12)",
+      "quantity": 1,
+      "unitPrice": 145,
+      "totalPrice": 145,
+      "createdAt": "2026-08-13T08:40:30.000Z"
     }
   ],
   "payments": [
@@ -261,22 +345,36 @@
       "amount": 175,
       "currency": "INR",
       "status": "PENDING",
-      "createdAt": "2026-08-14T08:43:24.000Z",
-      "updatedAt": "2026-08-14T08:43:24.000Z"
+      "createdAt": "2026-08-11T09:13:24.000Z",
+      "updatedAt": "2026-08-11T09:13:24.000Z"
     },
     {
       "id": 2,
       "orderId": 2,
       "userId": 2,
       "provider": "ONLINE",
+      "providerOrderId": "razorpay_order_lq2tcq3zd",
+      "providerPaymentId": "pay_sim_sibpr7y0v",
       "amount": 1450,
       "currency": "INR",
       "status": "SUCCESS",
-      "createdAt": "2026-08-14T15:16:22.664Z",
-      "updatedAt": "2026-08-14T15:16:32.782Z",
-      "providerOrderId": "razorpay_order_lq2tcq3zd",
-      "providerPaymentId": "pay_sim_sibpr7y0v",
-      "method": "MOCK_CARD"
+      "method": "MOCK_CARD",
+      "createdAt": "2026-08-11T15:46:22.000Z",
+      "updatedAt": "2026-08-11T15:46:32.000Z"
+    },
+    {
+      "id": 3,
+      "orderId": 3,
+      "userId": 3,
+      "provider": "ONLINE",
+      "providerOrderId": "razorpay_order_9f4y1js6a",
+      "providerPaymentId": "pay_sim_0z41ymfdq",
+      "amount": 175,
+      "currency": "INR",
+      "status": "SUCCESS",
+      "method": "MOCK_CARD",
+      "createdAt": "2026-08-13T08:40:30.000Z",
+      "updatedAt": "2026-08-13T08:40:56.000Z"
     }
   ],
   "orderStatusHistory": [
@@ -286,7 +384,7 @@
       "status": "PENDING",
       "note": "Order placed successfully.",
       "changedBy": 2,
-      "createdAt": "2026-08-14T08:43:24.000Z"
+      "createdAt": "2026-08-11T09:13:24.000Z"
     },
     {
       "id": 2,
@@ -294,7 +392,7 @@
       "status": "PENDING",
       "note": "Order placed successfully.",
       "changedBy": 2,
-      "createdAt": "2026-08-14T15:16:22.664Z"
+      "createdAt": "2026-08-11T15:46:22.000Z"
     },
     {
       "id": 3,
@@ -302,7 +400,7 @@
       "status": "CONFIRMED",
       "note": "Payment verified. Order confirmed.",
       "changedBy": null,
-      "createdAt": "2026-08-14T15:16:32.782Z"
+      "createdAt": "2026-08-11T15:46:32.000Z"
     },
     {
       "id": 4,
@@ -310,7 +408,31 @@
       "status": "CONFIRMED",
       "note": "Order status updated to CONFIRMED.",
       "changedBy": 1,
-      "createdAt": "2026-08-14T15:18:05.481Z"
+      "createdAt": "2026-08-11T15:48:05.000Z"
+    },
+    {
+      "id": 5,
+      "orderId": 3,
+      "status": "PENDING",
+      "note": "Order placed successfully.",
+      "changedBy": 3,
+      "createdAt": "2026-08-13T08:40:30.000Z"
+    },
+    {
+      "id": 6,
+      "orderId": 3,
+      "status": "CONFIRMED",
+      "note": "Payment verified. Order confirmed.",
+      "changedBy": null,
+      "createdAt": "2026-08-13T08:40:56.000Z"
+    },
+    {
+      "id": 7,
+      "orderId": 3,
+      "status": "OUT_FOR_DELIVERY",
+      "note": "Order status updated to OUT_FOR_DELIVERY.",
+      "changedBy": 1,
+      "createdAt": "2026-08-13T08:46:33.000Z"
     }
   ],
   "reviews": [
@@ -322,8 +444,8 @@
       "rating": 5,
       "comment": "Very fresh eggs! Perfect shell thickness and beautiful orange yolks.",
       "isApproved": true,
-      "createdAt": "2026-08-13T16:15:56.000Z",
-      "updatedAt": "2026-08-13T16:15:56.000Z"
+      "createdAt": "2026-08-10T16:45:56.000Z",
+      "updatedAt": "2026-08-10T16:45:56.000Z"
     }
   ],
   "notifications": [
@@ -334,7 +456,7 @@
       "message": "Your order ORD-20260814-2735 has been placed. Current status: PENDING.",
       "type": "ORDER_PLACED",
       "isRead": true,
-      "createdAt": "2026-08-14T08:43:24.000Z"
+      "createdAt": "2026-08-11T09:13:24.000Z"
     },
     {
       "id": 2,
@@ -342,8 +464,8 @@
       "title": "🎉 Order Placed Successfully",
       "message": "Your order ORD-20260814-4323 has been placed. Current status: PENDING.",
       "type": "ORDER_PLACED",
-      "isRead": false,
-      "createdAt": "2026-08-14T15:16:22.664Z"
+      "isRead": true,
+      "createdAt": "2026-08-11T15:46:22.000Z"
     },
     {
       "id": 3,
@@ -351,8 +473,8 @@
       "title": "👍 Payment Verified & Order Confirmed",
       "message": "Your payment for order ORD-20260814-4323 succeeded. Order status: CONFIRMED.",
       "type": "ORDER_CONFIRMED",
-      "isRead": false,
-      "createdAt": "2026-08-14T15:16:32.782Z"
+      "isRead": true,
+      "createdAt": "2026-08-11T15:46:32.000Z"
     },
     {
       "id": 4,
@@ -360,8 +482,35 @@
       "title": "👍 Order Confirmed",
       "message": "Your order ORD-20260814-2735 is confirmed and being processed.",
       "type": "ORDER_CONFIRMED",
+      "isRead": true,
+      "createdAt": "2026-08-11T15:48:05.000Z"
+    },
+    {
+      "id": 5,
+      "userId": 3,
+      "title": "🎉 Order Placed Successfully",
+      "message": "Your order ORD-20260816-8171 has been placed. Current status: PENDING.",
+      "type": "ORDER_PLACED",
+      "isRead": true,
+      "createdAt": "2026-08-13T08:40:30.000Z"
+    },
+    {
+      "id": 6,
+      "userId": 3,
+      "title": "👍 Payment Verified & Order Confirmed",
+      "message": "Your payment for order ORD-20260816-8171 succeeded. Order status: CONFIRMED.",
+      "type": "ORDER_CONFIRMED",
+      "isRead": true,
+      "createdAt": "2026-08-13T08:40:56.000Z"
+    },
+    {
+      "id": 7,
+      "userId": 3,
+      "title": "🚚 Out for Delivery",
+      "message": "Your order ORD-20260816-8171 is out for delivery. Keep your phone handy!",
+      "type": "ORDER_OUT_FOR_DELIVERY",
       "isRead": false,
-      "createdAt": "2026-08-14T15:18:05.481Z"
+      "createdAt": "2026-08-13T08:46:33.000Z"
     }
   ]
 }

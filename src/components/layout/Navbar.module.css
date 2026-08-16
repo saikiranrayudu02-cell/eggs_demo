@@ -4,13 +4,14 @@
   left: 0;
   width: 100%;
   height: var(--navbar-height);
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
   border-bottom: 1px solid rgba(15, 23, 42, 0.05);
   z-index: 100;
   display: flex;
   align-items: center;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .container {
@@ -31,17 +32,22 @@
   font-weight: 800;
   font-size: 1.55rem;
   color: var(--primary-color);
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.25s var(--ease-spring);
   letter-spacing: -0.02em;
 }
 
 .logo:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
 .eggEmoji {
   font-size: 1.7rem;
-  filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.15));
+  filter: drop-shadow(0 2px 6px rgba(245, 158, 11, 0.15));
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.logo:hover .eggEmoji {
+  transform: rotate(-12deg) scale(1.1);
 }
 
 .logoText {
@@ -59,10 +65,10 @@
 
 .navLink {
   font-family: var(--font-family-display);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 600;
   color: var(--text-secondary);
-  transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: color 0.2s var(--ease-spring);
   position: relative;
   padding: 8px 0;
 }
@@ -75,12 +81,13 @@
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
   width: 0;
   height: 2px;
   border-radius: var(--radius-full);
-  background-color: var(--primary-color);
-  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-hover));
+  transition: all 0.3s var(--ease-spring);
+  transform: translateX(-50%);
 }
 
 .navLink:hover::after {
@@ -92,13 +99,13 @@
 }
 
 .adminLink::after {
-  background-color: var(--secondary-color);
+  background: linear-gradient(90deg, var(--secondary-color), var(--secondary-hover));
 }
 
 .actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .actionBtn {
@@ -112,23 +119,24 @@
   color: var(--text-secondary);
   background: rgba(15, 23, 42, 0.03);
   border: 1px solid rgba(15, 23, 42, 0.01);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s var(--ease-spring);
 }
 
 .actionBtn:hover {
-  background: rgba(16, 185, 129, 0.08);
-  border-color: rgba(16, 185, 129, 0.12);
+  background: rgba(245, 158, 11, 0.08);
+  border-color: rgba(245, 158, 11, 0.15);
   color: var(--primary-color);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.1);
 }
 
 .badge {
   position: absolute;
-  top: -2px;
-  right: -2px;
-  background: var(--error-color);
+  top: -3px;
+  right: -3px;
+  background: linear-gradient(135deg, var(--error-color), #DC2626);
   color: #FFFFFF;
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 700;
   height: 18px;
   min-width: 18px;
@@ -138,6 +146,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: scaleIn 0.3s var(--ease-spring);
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
 }
 
 .dropdownContainer {
@@ -147,7 +161,7 @@
 @keyframes dropdownEntrance {
   from {
     opacity: 0;
-    transform: translateY(8px) scale(0.97);
+    transform: translateY(8px) scale(0.96);
   }
   to {
     opacity: 1;
@@ -159,17 +173,19 @@
   position: absolute;
   top: calc(100% + 10px);
   right: -100px;
-  width: 340px;
+  width: 360px;
   background: rgba(255, 255, 255, 0.98);
   border: 1px solid rgba(15, 23, 42, 0.06);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-2xl);
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 16px;
   z-index: 200;
-  animation: dropdownEntrance 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: dropdownEntrance 0.25s var(--ease-spring) forwards;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .dropdownHeader {
@@ -177,13 +193,14 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--border-color);
-  padding-bottom: 10px;
+  padding-bottom: 12px;
 }
 
 .dropdownHeader h4 {
   font-family: var(--font-family-display);
-  font-weight: 700;
+  font-weight: 750;
   color: var(--text-primary);
+  letter-spacing: -0.01em;
 }
 
 .dropdownHeader button {
@@ -202,7 +219,7 @@
   flex-direction: column;
   max-height: 300px;
   overflow-y: auto;
-  gap: 8px;
+  gap: 6px;
 }
 
 .emptyNotif {
@@ -214,17 +231,18 @@
 
 .notifItem {
   padding: 12px 14px;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   background: rgba(15, 23, 42, 0.02);
   display: flex;
   flex-direction: column;
   gap: 4px;
   border-left: 3px solid transparent;
-  transition: all 0.15s ease;
+  transition: all 0.2s ease;
 }
 
 .notifItem:hover {
   background: rgba(15, 23, 42, 0.04);
+  transform: translateX(2px);
 }
 
 .notifItem.unread {
@@ -266,27 +284,30 @@
   padding: 6px 14px;
   border-radius: var(--radius-full);
   background: rgba(15, 23, 42, 0.03);
-  border: 1px solid rgba(15, 23, 42, 0.01);
+  border: 1px solid rgba(15, 23, 42, 0.03);
   font-weight: 600;
   color: var(--text-primary);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s var(--ease-spring);
   cursor: pointer;
 }
 
 .profileLink:hover {
-  background: rgba(15, 23, 42, 0.06);
+  background: rgba(245, 158, 11, 0.06);
+  border-color: rgba(245, 158, 11, 0.1);
 }
 
 .avatar {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
   color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.2);
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2);
+  font-size: 0.75rem;
+  font-weight: 700;
 }
 
 .userName {
@@ -294,18 +315,18 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 }
 
 .profileDropdown {
   position: absolute;
   top: calc(100% + 8px);
   right: 0;
-  width: 200px;
+  width: 210px;
   background: rgba(255, 255, 255, 0.98);
   border: 1px solid rgba(15, 23, 42, 0.06);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-2xl);
   padding: 8px;
   display: flex;
   flex-direction: column;
@@ -313,7 +334,9 @@
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px) scale(0.95);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s var(--ease-spring);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .profileMenuContainer:hover .profileDropdown {
@@ -328,12 +351,13 @@
   font-weight: 600;
   border-radius: var(--radius-sm);
   color: var(--text-secondary);
-  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.2s var(--ease-spring);
 }
 
 .dropLink:hover {
-  background: rgba(16, 185, 129, 0.06);
+  background: rgba(245, 158, 11, 0.06);
   color: var(--primary-color);
+  transform: translateX(2px);
 }
 
 .divider {
@@ -354,48 +378,52 @@
   width: 100%;
   text-align: left;
   font-weight: 600;
-  transition: all 0.15s ease;
+  transition: all 0.2s ease;
 }
 
 .logoutBtn:hover {
   background: var(--error-bg);
+  transform: translateX(2px);
 }
 
 /* Auth Buttons */
 .authButtons {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .loginBtn {
   padding: 8px 16px;
   font-family: var(--font-family-display);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--text-secondary);
-  transition: color 0.15s ease;
+  transition: all 0.2s ease;
+  border-radius: var(--radius-full);
 }
 
 .loginBtn:hover {
   color: var(--primary-color);
+  background: rgba(245, 158, 11, 0.06);
 }
 
 .registerBtn {
-  padding: 10px 20px;
+  padding: 10px 22px;
   background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
   color: #FFFFFF;
   font-family: var(--font-family-display);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   border-radius: var(--radius-full);
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.2);
+  transition: all 0.3s var(--ease-spring);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .registerBtn:hover {
-  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.35);
-  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(245, 158, 11, 0.35);
+  transform: translateY(-2px) scale(1.02);
 }
 
 .mobileMenuBtn {
@@ -408,12 +436,12 @@
   color: var(--text-secondary);
   background: rgba(15, 23, 42, 0.03);
   border: 1px solid rgba(15, 23, 42, 0.01);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.2s var(--ease-spring);
 }
 
 .mobileMenuBtn:hover {
-  background: rgba(16, 185, 129, 0.08);
-  border-color: rgba(16, 185, 129, 0.12);
+  background: rgba(245, 158, 11, 0.08);
+  border-color: rgba(245, 158, 11, 0.12);
   color: var(--primary-color);
 }
 
@@ -423,26 +451,26 @@
   left: 0;
   width: 100%;
   background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   border-bottom: 1px solid rgba(15, 23, 42, 0.06);
   padding: 16px 24px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   z-index: 99;
-  box-shadow: var(--shadow-lg);
-  animation: dropdownEntrance 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  box-shadow: var(--shadow-xl);
+  animation: dropdownEntrance 0.25s var(--ease-spring) forwards;
 }
 
 .mobileNavLink {
   font-family: var(--font-family-display);
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   font-weight: 600;
   color: var(--text-secondary);
-  padding: 10px 0;
+  padding: 12px 0;
   border-bottom: 1px solid var(--border-color);
-  transition: color 0.15s ease;
+  transition: all 0.2s ease;
 }
 
 .mobileNavLink:last-child {
@@ -451,6 +479,7 @@
 
 .mobileNavLink:hover {
   color: var(--primary-color);
+  padding-left: 8px;
 }
 
 .mobileAdminLink {
@@ -532,12 +561,12 @@
   gap: 10px;
   padding: 12px 14px;
   font-size: 0.95rem;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   color: var(--error-color);
   width: 100%;
   text-align: left;
   font-weight: 700;
-  transition: all 0.15s ease;
+  transition: all 0.2s ease;
   background: var(--error-bg);
   margin-top: 8px;
   border: none;
@@ -558,9 +587,15 @@
   font-weight: 700;
   font-size: 0.95rem;
   color: var(--text-primary);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-color-hover);
   border-radius: var(--radius-full);
   background: #FFFFFF;
+  transition: all 0.2s ease;
+}
+
+.mobileLoginBtn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .mobileRegisterBtn {
@@ -572,11 +607,11 @@
   font-weight: 700;
   font-size: 0.95rem;
   border-radius: var(--radius-full);
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
 }
 
 .mobileNotifBadge {
-  background: var(--error-color);
+  background: linear-gradient(135deg, var(--error-color), #DC2626);
   color: #FFFFFF;
   font-size: 0.7rem;
   font-weight: 700;

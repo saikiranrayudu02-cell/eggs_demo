@@ -65,7 +65,7 @@
 .activeLink {
   background-color: var(--primary-color) !important;
   color: #FFFFFF !important;
-  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.25);
+  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.25);
 }
 
 .footer {
