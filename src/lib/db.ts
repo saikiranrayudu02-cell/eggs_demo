@@ -338,7 +338,6 @@ class MySQLDatabase {
   private cache: DatabaseSchema | null = null;
 
   public read(): DatabaseSchema {
-    if (this.cache) return this.cache;
     try {
       const syncScript = path.join(process.cwd(), 'src/lib/mysql_sync.js');
       const stdout = execSync(`node "${syncScript}"`, {
@@ -349,6 +348,7 @@ class MySQLDatabase {
       return this.cache!;
     } catch (e) {
       console.error('Error reading MySQL database, returning fallback JSON or seed data', e);
+      if (this.cache) return this.cache;
       if (fs.existsSync(DB_FILE)) {
         try {
           const fileContent = fs.readFileSync(DB_FILE, 'utf-8');
