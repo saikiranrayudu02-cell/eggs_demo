@@ -375,14 +375,13 @@ class MySQLDatabase {
 
     try {
       const writeScript = path.join(/*turbopackIgnore: true*/ process.cwd(), 'src/lib/mysql_write.js');
-      const child = spawn('node', [writeScript], {
-        stdio: ['pipe', 'ignore', 'inherit'],
-        env: { ...process.env }
+      execSync(`node "${writeScript}"`, {
+        input: JSON.stringify(data),
+        env: { ...process.env },
+        maxBuffer: 10 * 1024 * 1024
       });
-      child.stdin.write(JSON.stringify(data));
-      child.stdin.end();
     } catch (e) {
-      console.error('Error spawning MySQL write task', e);
+      console.error('Error executing MySQL write task', e);
     }
   }
 
