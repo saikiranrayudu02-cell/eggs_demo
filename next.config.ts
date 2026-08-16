@@ -3,8 +3,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     '/api/**/*': [
-      'src/lib/mysql_sync.js',
-      'src/lib/mysql_write.js',
+      'src/lib/dist/mysql_sync/index.js',
+      'src/lib/dist/mysql_write/index.js',
       'src/lib/db.json'
     ]
   }

@@ -339,7 +339,7 @@ class MySQLDatabase {
 
   public read(): DatabaseSchema {
     try {
-      const syncScript = path.join(process.cwd(), 'src/lib/mysql_sync.js');
+      const syncScript = path.join(process.cwd(), 'src/lib/dist/mysql_sync/index.js');
       const stdout = execSync(`node "${syncScript}"`, {
         encoding: 'utf-8',
         maxBuffer: 10 * 1024 * 1024
@@ -374,7 +374,7 @@ class MySQLDatabase {
     }
 
     try {
-      const writeScript = path.join(/*turbopackIgnore: true*/ process.cwd(), 'src/lib/mysql_write.js');
+      const writeScript = path.join(/*turbopackIgnore: true*/ process.cwd(), 'src/lib/dist/mysql_write/index.js');
       execSync(`node "${writeScript}"`, {
         input: JSON.stringify(data),
         env: { ...process.env },
